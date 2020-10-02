@@ -63,3 +63,10 @@ delete('/words/:id/definition/:definition_id') do
   @word = Word.find(params[:id].to_i())
   redirect to('/words')
 end
+
+patch('/words/:id/definition/:definition_id') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update_body(params[:definition_body], @word.id)
+  redirect to('/words')
+end

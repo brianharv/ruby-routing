@@ -69,9 +69,9 @@ describe '#Definition' do
     it('updates aa definition') do
       def_one = Definition.new({:title => "Bucket", :body => "A vessel that can contain things.", :word_id => nil, :id => 1})
       def_one.save()
-      def_one.update_body("Something you kick.")
+      def_one.update_body("Something you kick.", 2)
       expect(def_one.body).to(eq("Something you kick."))
     end
   end
-  
+
 end

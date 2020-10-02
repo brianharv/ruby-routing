@@ -32,8 +32,10 @@ class Definition
     @@definitions[id]
   end
   
-  def update_body(new_body)
-    @body = new_body
+  def update_body(new_body, word_id)
+    self.body = new_body
+    self.word_id = word_id
+    @@definitions[self.id] = Definition.new({:title => self.title, :body => self.body, :word_id => self.word_id, :id => self.id})
   end
   
   def delete

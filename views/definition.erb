@@ -3,7 +3,15 @@
 <h3> Definition Title: <%=@definition.title%></h3>
 
 <h4><%=@definition.body%></h4>
+<br><br>
+<form action="/words/<%= @definition.word.id %>/definition/<%= @definition.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
 
+  <label for="definition_body">Edit Definition</label>
+  <input id="definition_body" name="definition_body" type="text">
+
+  <button type="submit"class="btn btn-primary">Update</button>
+</form>
 <br><br>
 </form><form action="/words/<%= @definition.word.id %>/definition/<%= @definition.id%>" method="post">
   <input name="_method" type="hidden" value="delete">
@@ -12,3 +20,5 @@
 </form>
 <br><br>
 <a href="/words/<%=@word_id%>%"> Return to Word</a>
+
+<p><a href="/words/<%= @definition.word.id %>/definition/<%= @definition.id%>/edit">Edit definition</a></p>
