@@ -1,8 +1,8 @@
 <h1><strong><%= @word.name %></strong></h1>
 <br><br>
-<h3> Definition Title: <%=@definition.title%></h3>
-
-<h4><%=@definition.body%></h4>
+<h3><strong> Definition Title: </strong><%=@definition.title%></h3>
+<br><br>
+<h4>"<%=@definition.body%>"</h4>
 <br><br>
 <form action="/words/<%= @definition.word.id %>/definition/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
