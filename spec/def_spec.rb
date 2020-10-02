@@ -24,4 +24,15 @@ describe '#Definition' do
       expect(Definition.all).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it("saves a definition") do
+      def_one = Definition.new({:title => "Rocket", :body => nil, :word_id => nil, :id => nil})
+      def_one.save()
+      def_two = Definition.new({:title => "Dreams", :body => nil, :word_id => nil, :id => nil})
+      def_two.save()
+      expect(Definition.all).to(eq([def_one, def_two]))
+    end
+  end
+
 end
