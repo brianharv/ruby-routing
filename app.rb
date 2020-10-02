@@ -31,7 +31,6 @@ end
 get('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @definitions = Definition.find_by_word(params[:id].to_i())
-  #@definition = Definition.new({:title => title, :body => body, :word_id => @word.id, :id => nil})
   erb(:word)
 end
 
@@ -43,4 +42,10 @@ post('/words/:id') do
   @definition.save()
   @definitions = Definition.find_by_word(params[:id].to_i())
   erb(:word)
+end
+
+get('/words/:id/definitions/:definition_id')do
+  @definition = Definition.find(params[:definition_id].to_i)
+  @word_id = params[:id]
+  erb(:definitions)
 end
