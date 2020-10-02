@@ -6,21 +6,21 @@ class Word
   @@words = {}
   @@total_rows = 0
 
-  def initialize(attributes) do
+  def initialize(attributes) 
     @name = attributes.fetch(:name)
-    @id = atributes.fetch(:id)
+    @id = attributes.fetch(:id) || @@total_rows += 1
   end
 
-  def self.all do
+  def self.all 
     @@words.values()
   end
 
-  def self.save
+  def save
     @@words[self.id] = Word.new({:name => self.name, :id => self.id})
   end
   
   def ==(word_to_compare)
-    self.name == word_to_compare.name()
+    self.name() == word_to_compare.name()
   end
   
   def self.clear
@@ -31,3 +31,5 @@ class Word
   def self.find(id)
     @@words[id]
   end  
+
+end  

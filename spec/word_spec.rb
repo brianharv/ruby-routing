@@ -6,7 +6,6 @@ require 'pry'
 describe '#Word' do
   before(:each) do
     Word.clear()
-    #@attributes = {:name => "Sandwich", :id => nil}
   end
 
   describe '.all' do
@@ -17,7 +16,7 @@ describe '#Word' do
   end
 
   describe '#save' do
-    it('saves instance of Word in array.')
+    it('saves instance of Word in array.') do
       new_word = Word.new({:name => "Sandwich", :id => nil})
       new_word.save()
       expect(Word.all).to(eq([new_word]))
@@ -28,7 +27,9 @@ describe '#Word' do
     it('clears the array of saved words') do
       new_word = Word.new({:name => "Sandwich", :id => nil})
       new_word.save()
-      new_word.clear()
+      newer_word = Word.new({:name => "Pizza", :id => nil})
+      newer_word.save()
+      Word.clear()
       expect(Word.all).to(eq([]))
     end
   end
@@ -46,12 +47,10 @@ describe '#Word' do
   describe '#==' do
     it('compares two words by their names. If they are the same name then they are equal.') do
       new_word = Word.new({:name => "Sandwich", :id => nil})
-      new_word.save()
       repeat_word = Word.new({:name => "Sandwich", :id => nil})
-      repeat_word.save()
       expect(new_word).to(eq(repeat_word))
     end
   end
 
-  
+
 end
