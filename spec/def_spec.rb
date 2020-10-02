@@ -73,4 +73,5 @@ describe '#Definition' do
       expect(def_one.body).to(eq("Something you kick."))
     end
   end
+  
 end
