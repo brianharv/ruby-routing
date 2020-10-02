@@ -31,12 +31,13 @@ end
 get('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @definitions = Definition.find_by_word(params[:id].to_i())
+  #@definition = Definition.new({:title => title, :body => body, :word_id => @word.id, :id => nil})
   erb(:word)
 end
 
 post('/words/:id') do
   @word = Word.find(params[:id].to_i())
-  title = params[:definition_name]
+  title = params[:definition_title]
   body = params[:definition_body]
   @definition = Definition.new({:title => title, :body => body, :word_id => @word.id, :id => nil})
   @definition.save()
