@@ -40,7 +40,7 @@ describe '#Word' do
       new_word.save()
       newer_word = Word.new({:name => "Pizza", :id => nil})
       newer_word.save()
-      expect(Word.find(2)).to(eq([newer_word]))
+      expect(Word.find(2)).to(eq(newer_word))
     end
   end
 
