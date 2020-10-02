@@ -33,7 +33,7 @@ describe '#Definition' do
     end
   end
 
-  describe '.clear' do
+  describe('.clear') do
     it('clears the array of saved words') do
       def_one = Definition.new({:title => "Rocket", :body => nil, :word_id => nil, :id => nil})
       def_one.save()
@@ -44,5 +44,13 @@ describe '#Definition' do
     end
   end
 
-  
+  describe('.find') do
+    it('finds a definition by its unique id') do
+      def_one = Definition.new({:title => "Rocket", :body => nil, :word_id => nil, :id => 1})
+      def_one.save()
+      def_two = Definition.new({:title => "Dreams", :body => nil, :word_id => nil, :id => 2})
+      def_two.save()
+      expect(Definition.find(2)).to(eq(def_two))
+    end
+  end
 end

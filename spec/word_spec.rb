@@ -34,7 +34,7 @@ describe '#Word' do
     end
   end
 
-  describe '#find' do
+  describe '.find' do
     it('finds a word by its unique id') do
       new_word = Word.new({:name => "Sandwich", :id => nil})
       new_word.save()
