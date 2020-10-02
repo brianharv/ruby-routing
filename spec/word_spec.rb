@@ -63,7 +63,7 @@ describe '#Word' do
     end
   end
 
-  describe 'update' do
+  describe '#update' do
     it('updates an already entered word from word list') do
       new_word = Word.new({:name => "Sandwich", :id => nil})
       new_word.save()
