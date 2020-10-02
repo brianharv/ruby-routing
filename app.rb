@@ -1,10 +1,8 @@
-source('https://rubygems.org')
-
-gem('sinatra')      
-gem('sinatra-contrib')
-gem('rspec')
-gem('capybara', '~> 3.33')
-gem('pry')
+require('sinatra')
+require('sinatra/reloader')
+require('./lib/word')
+require('./lib/definition')
+also_reload('lib/**/*.rb')
 
 get('/') do
   @words = Word.all
