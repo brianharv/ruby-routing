@@ -1,7 +1,7 @@
 <h1><strong><%= @word.name %></strong></h1>
-
+<br><br>
 <h2> <strong>Definitions</strong> <h2>
-
+<br><br>
 <% if @definitions.any?%>
   <ul>
     <% @definitions.each do |definition|%>
@@ -10,7 +10,7 @@
   <% else %>
     <p> Be the first to add a definition!</p>
   <% end %>      
-
+<br><br>
 <form action="/words/<%=@word.id %>" method="post">
 <input name="_method" type="hidden" value="post">
   <div class="form-group">
@@ -27,6 +27,7 @@
 </form>  
 <br><br>
 <a href="/words/<%= @word.id %>/edit">Edit Word</a>
+<br><br>
 </form><form action="/words/<%= @word.id() %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit" class="btn btn-secondary">Delete Word</button>

@@ -34,7 +34,6 @@ describe '#Word' do
       click_on('Publish')
       click_on('Sandwich')
       fill_in('definition_title', :with => 'FAV')
-      fill_in('definition_body', :with => 'yum yum yum')
       click_on('Add Definition')
       expect(page).to have_content('FAV')
     end

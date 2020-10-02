@@ -1,5 +1,5 @@
 <h1>Update <%= @word.name %></h1>
-
+<br><br> 
 <form action="/words/<%= @word.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
 
@@ -8,5 +8,5 @@
 
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
-
+<br><br>
 <p><a href="/words/<%= @word.id %>">Return to Word</a></p>
