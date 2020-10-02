@@ -26,4 +26,10 @@
   <button type="submit" class="btn btn-primary"> Add Definition</button>
 </form>  
 
+</form><form action="/words/<%= @word.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn btn-secondary">Delete Word</button>
+</form>
+
+<br><br>
 <p><a href="/words">Back to Word Central</a></p>  

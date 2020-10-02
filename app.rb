@@ -45,7 +45,14 @@ post('/words/:id') do
 end
 
 get('/words/:id/definitions/:definition_id')do
-  @definition = Definition.find(params[:definition_id].to_i)
+  @word = Word.find(params[:id].to_i())
+  @definition = Definition.find(params[:definition_id].to_i())
   @word_id = params[:id]
   erb(:definitions)
+end
+
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  redirect to('/words')
 end
