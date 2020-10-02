@@ -15,3 +15,8 @@ get('/words') do
   @words = Word.all
   erb(:words)
 end
+
+get('/words/:id')
+  @words = Word.all
+  erb(:word)
+end

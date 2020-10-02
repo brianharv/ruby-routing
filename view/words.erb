@@ -1,0 +1,13 @@
+<h3> Word Central <h3>
+
+<% if @words.any? %>
+  <ul>
+    <% @words.each do |word|%>
+    <li>
+    <a href="/words/<%= word.id %>"> <%= word.name %></a>
+    <li>
+  <% end %>
+  </ul>
+  <% else %>
+    <p> Looks like there isn't anything here...</p>
+  <% end %>    
