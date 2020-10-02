@@ -30,5 +30,6 @@ end
 
 get('/words/:id') do
   @word = Word.find(params[:id].to_i())
+  @definitions = Definition.find_by_word(params[:id].to_i())
   erb(:word)
 end

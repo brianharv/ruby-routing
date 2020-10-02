@@ -30,6 +30,21 @@ class Word
 
   def self.find(id)
     @@words[id]
-  end  
+  end
+  
+  def delete
+    @@words.delete(self.id)
+  end
+  
+  def update_word(new_name)
+    @name = new_name
+  end
+  
+  ## Definitions
+
+  def definition
+    Definition.find_by_board(self.id)
+  end
+  
 
 end  

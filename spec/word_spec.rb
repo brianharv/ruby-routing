@@ -52,4 +52,15 @@ describe '#Word' do
     end
   end
 
+  describe '#delete' do
+    it('deletes word from list') do
+      new_word = Word.new({:name => "Sandwich", :id => nil})
+      new_word.save()
+      newer_word = Word.new({:name => "Garbage", :id => nil})
+      newer_word.save()
+      new_word.delete()
+      expect(Word.all).to(eq([newer_word]))
+    end
+  end
+
 end
