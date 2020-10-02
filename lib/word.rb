@@ -1,7 +1,7 @@
 require('pry')
 
 class Word
-  attr_reader :name, :id
+  attr_accessor :name, :id
 
   @@words = {}
   @@total_rows = 0

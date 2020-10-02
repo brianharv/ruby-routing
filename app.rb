@@ -70,3 +70,14 @@ patch('/words/:id/definition/:definition_id') do
   definition.update_body(params[:definition_body], @word.id)
   redirect to('/words')
 end
+
+get('/words/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update_word(params[:word_name])
+  redirect to('/words')
+end

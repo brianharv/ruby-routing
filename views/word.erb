@@ -25,7 +25,8 @@
   </div>  
   <button type="submit" class="btn btn-primary"> Add Definition</button>
 </form>  
-
+<br><br>
+<a href="/words/<%= @word.id %>/edit">Edit Word</a>
 </form><form action="/words/<%= @word.id() %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit" class="btn btn-secondary">Delete Word</button>

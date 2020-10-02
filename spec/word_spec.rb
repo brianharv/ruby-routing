@@ -63,7 +63,7 @@ describe '#Word' do
     end
   end
 
-  describe '#update' do
+  describe '#update_word' do
     it('updates an already entered word from word list') do
       new_word = Word.new({:name => "Sandwich", :id => nil})
       new_word.save()
@@ -71,4 +71,5 @@ describe '#Word' do
       expect(new_word.name).to(eq("Soundwich"))
     end
   end
+
 end
