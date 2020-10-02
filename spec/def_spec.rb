@@ -5,8 +5,6 @@ describe '#Definition' do
   before(:each) do
     Word.clear()
     Definition.clear()
-    @word = Word.new({:name => "Rocket", :id => nil})
-    @word.save()
   end
 
   describe('#==') do
@@ -35,6 +33,15 @@ describe '#Definition' do
     end
   end
 
-  
+  describe '.clear' do
+    it('clears the array of saved words') do
+      def_one = Definition.new({:title => "Rocket", :body => nil, :word_id => nil, :id => nil})
+      def_one.save()
+      def_two = Definition.new({:title => "Dreams", :body => nil, :word_id => nil, :id => nil})
+      def_two.save()
+      Word.clear()
+      expect(Word.all).to(eq([]))
+    end
+  end
 
 end
