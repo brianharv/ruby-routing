@@ -16,4 +16,12 @@ describe '#Definition' do
       expect(def_one).to(eq(def_two))
     end
   end
+
+  describe('.all') do
+    it("returns an array of definitions") do
+      def_one = Definition.new({:title => "Rocket", :body => nil, :word_id => nil, :id => nil})
+      def_two = Definition.new({:title => "Dreams", :body => nil, :word_id => nil, :id => nil})
+      expect(Definition.all).to(eq([def_one, def_two]))
+    end
+  end
 end
