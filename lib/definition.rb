@@ -42,6 +42,10 @@ class Definition
     @@definitions.delete(self.id)
   end
   
+
+  ## Word
+
+  
   def word
     Word.find(self.word_id)
   end

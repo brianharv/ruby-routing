@@ -5,6 +5,10 @@ require('pry')
 require('./lib/definition')
 also_reload('lib/**/*.rb')
 
+
+## Words
+
+
 get('/') do
   @words = Word.all
   erb(:words)
@@ -44,6 +48,26 @@ post('/words/:id') do
   erb(:word)
 end
 
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  redirect to('/words')
+end
+
+get('/words/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update_word(params[:word_name])
+  redirect to('/words')
+end
+
+
+## Definitions
+
 get('/words/:id/definition/:definition_id')do
   @word = Word.find(params[:id].to_i())
   @definition = Definition.find(params[:definition_id].to_i())
@@ -51,11 +75,6 @@ get('/words/:id/definition/:definition_id')do
   erb(:definition)
 end
 
-delete('/words/:id') do
-  @word = Word.find(params[:id].to_i())
-  @word.delete()
-  redirect to('/words')
-end
 
 delete('/words/:id/definition/:definition_id') do
   definition = Definition.find(params[:definition_id].to_i())
@@ -71,13 +90,4 @@ patch('/words/:id/definition/:definition_id') do
   redirect to('/words')
 end
 
-get('/words/:id/edit') do
-  @word = Word.find(params[:id].to_i())
-  erb(:edit_word)
-end
 
-patch('/words/:id') do
-  @word = Word.find(params[:id].to_i())
-  @word.update_word(params[:word_name])
-  redirect to('/words')
-end
