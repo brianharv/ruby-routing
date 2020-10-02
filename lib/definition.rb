@@ -1,7 +1,7 @@
 class Definition
-  attr_accessor :title, :body, id:, :word_id
+  attr_accessor :title, :body, :id, :word_id
 
-  @@definitions {}
+  @@definitions = {}
   @@total_rows = 0
 
   def initialize(attributes)
