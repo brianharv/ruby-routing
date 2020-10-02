@@ -53,5 +53,24 @@ describe '#Definition' do
       expect(Definition.find(2)).to(eq(def_two))
     end
   end
-  
+
+  describe('#delete') do
+    it('deletes definition from word') do
+      def_one = Definition.new({:title => "Rocket", :body => nil, :word_id => nil, :id => 1})
+      def_one.save()
+      def_two = Definition.new({:title => "Dreams", :body => nil, :word_id => nil, :id => 2})
+      def_two.save()
+      def_two.delete()
+      expect(Definition.all).to(eq([def_one]))
+    end
+  end
+
+  describe('#update_body') do
+    it('updates aa definition') do
+      def_one = Definition.new({:title => "Bucket", :body => "A vessel that can contain things.", :word_id => nil, :id => 1})
+      def_one.save()
+      def_one.update_body("Something you kick.")
+      expect(def_one.body).to(eq("Something you kick."))
+    end
+  end
 end
