@@ -53,4 +53,5 @@ describe '#Definition' do
       expect(Definition.find(2)).to(eq(def_two))
     end
   end
+  
 end
