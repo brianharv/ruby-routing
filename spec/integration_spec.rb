@@ -17,12 +17,26 @@ describe '#Word' do
   end
 
   describe('create /words path', {:type => :feature}) do
-    it('creates path and page for all post words') do
+    it('creates path and page for all posted words') do
       visit('/words')
       click_on('Add a new word')
       fill_in('word_name', :with => 'Sandwich')
       click_on('Publish')
       expect(page).to have_content('Sandwich')
+    end
+  end
+
+  describe('create definition path', {:type => :feature}) do
+    it('creates path and page for definitions') do  
+      visit('/words')
+      click_on('Add a new word')
+      fill_in('word_name', :with => 'Sandwich')
+      click_on('Publish')
+      click_on('Sandwich')
+      fill_in('definition_title', :with => 'FAV')
+      fill_in('definition_body', :with => 'yum yum yum')
+      click_on('Add Definition')
+      expect(page).to have_content('FAV')
     end
   end
 
