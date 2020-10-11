@@ -11,6 +11,15 @@ _An app that allows users to post words they do not know the definition of while
 
 * _[Follow this link](https://mighty-depths-74804.herokuapp.com/) to view and use the app on Heroku._
 
+_To run, test, and edit the app locally:_
+
+- Copy the [GitHub Repository Link](https://github.com/brianharv/ruby-routing)
+- Clone project to desktop <code>$ git clone {REPO LINK}</code>
+- Move to project directory <code>$ cd ruby-routing</code>
+- Open project in vscode <code>$ code .</code>
+- In terminal run <code>$ bundle install</code>
+- In terminal run <code>$ rspec</code>
+- In vscode terminal run <code>$ ruby app.rb</code>
 
 ## Known Bugs
 
